@@ -1,0 +1,66 @@
+.button{
+    font-family: inherit;
+    outline: none;
+}
+
+.button--3d{
+    background-color: rgb(225, 225, 225);
+    border: none;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0em 0.375em gray;
+    transition: ease 0.07s;
+}
+
+.button--3d:active{ 
+    transform: translateY(0.2em) !important;
+    box-shadow: 0em 0.125em gray !important;
+}
+
+.button--3d:hover{
+    background-color: rgb(235, 235, 235);
+    transform: translateY(-0.05em);
+    box-shadow: 0em 0.425em gray;
+}
+
+.button--pointed{
+    background-color: rgb(230, 230, 230);
+    border: none;
+    box-shadow: 0.3em 0.3em black;
+    padding: 1em;
+    transition: ease 0.1s;
+}
+
+.button--pointed:hover{
+    transform: translate(-0.1em, -0.1em);
+    box-shadow: 0.4em 0.4em black;
+}
+
+.button--pointed:active{
+    transform: translate(0.15em, 0.15em) !important;
+    box-shadow: 0.15em 0.15em black !important;
+}
+
+.button--basic{
+    border: none;
+    background-color: green;
+    padding: 1em;
+    color: white;
+}
+
+.button--basic:hover{
+    background-color: rgb(0, 167, 0);
+}
+
+.button--nav{
+    color: white;
+    text-decoration: none;
+    border: none;
+    background-color: green;
+    padding: 1em;
+    border-radius: 5em;
+}
+
+.button--nav:hover{
+    background-color: rgb(0, 167, 0);
+}
