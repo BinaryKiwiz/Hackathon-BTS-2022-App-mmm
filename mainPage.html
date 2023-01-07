@@ -7,12 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gudea:ital@1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Gudea&family=Paytone+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
   <title>TransformATrail.com</title>
   <style>
     body {
+      margin: 0;
+      margin-top: 1%;
       background-color: #A2BF9B; /* light green color */
     }
     .navbar {
@@ -35,7 +40,7 @@
       margin-left: 1rem;
     }
     .title {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Paytone One', sans-serif;
       text-align: center;
       font-size: 3rem;
       margin: 2rem 0;
@@ -53,12 +58,35 @@
       width: 45%;
       padding: 1rem;
     }
+    .overlay {
+      width: 5rem;
+      height: 5rem;
+      background-color: darkgreen;
+      border-radius: 50%; /* makes the element a circle */
+      color: white;
+      text-align: center;
+      line-height: 100px; /* centers the text vertically */
+      z-index: 10;
+      line-height: 5rem;
+      position: absolute;
+      top: 50%;
+      font-size: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      padding: 0%;
+      margin-right: -10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* other styles go here */
+  }
     .column h2 {
       font-family: 'Fredoka', sans-serif;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
     .column ul {
+      font-family: 'Gudea', sans-serif;
       list-style-position: inside;
       font-size: 1.2rem;
       list-style-type: disc;
@@ -85,8 +113,18 @@
       font-size: 3rem;
       text-align: center;
     }
-    .li{
-      font-family: 'Gudea', sans-serif;
+    .foot{
+      width: 100%;
+    }
+    @media only screen and (max-height: 600px){
+      .overlay{
+        display: none;
+      }
+    }
+    @media only screen and (max-width: 992px){
+      .overlay{
+        display: none;
+      }
     }
     .button--nav{
     color: white;
@@ -100,25 +138,6 @@
     .button--nav:hover{
         background-color: #A2bf9b;
     }
-    button {
-    margin-left: 40%;
-    display: block;
-    width: 10rem;
-    height: 5rem;
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-  }
-  a{
-    text-decoration:none;
-  }
-  #login--button{
-    background-color: darkgreen;
-    color: white;
-  }
   </style>
 </head>
 <body>
@@ -127,8 +146,7 @@
     <div>
       <a onclick = "window.location = 'instructions.html' + window.location.search">How to renovate</a>
       <a onclick = "window.location = 'mission.html' + window.location.search">Our mission</a>
-      <a onclick = "window.location = 'login.html' + window.location.search" class = "button--nav" id = "login--button">Login</a>
-
+      <a onclick = "window.location = 'login.html' + window.location.search" class = "button--nav">Login</a>
     </div>
   </nav>
   <h1 class="title">Welcome to TransformATrail!</h1>
@@ -145,7 +163,7 @@
         <br>
         <li>set up volunteer dates</li>
       </ul>
-      <a href="index.html"><button>Create</button></a>
+      <button class="button">Create</button>
     </div>
     <div class="column">
       <h2>Join a Volunteer Group</h2>
@@ -158,11 +176,14 @@
         <li>view fellow volunteers</li>
         <br>
         <li>sign up for a listing at your convenience</li>
-        <br>
       </ul>
-      <a href="index.html"><button>Join</button></a>
-      <!-- <button href="index.html" button>Join</button> -->
+      <button class="button">Join</button>
     </div>
   </div>
+  <div class = "overlay">or
+  </div>
+  <footer>
+    <img class = "foot" src="background.png" alt="Footer image">
+  </footer>
 </body>
 </html>
