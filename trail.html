@@ -94,9 +94,16 @@
                 <div id = "projects">
 
                 </div>
-                <button class = "button--3d" id = "create-project">
-                    Organize a new project
-                </button>
+                <form onsubmit = "return false">
+                    <label for = "input-date">Date: </label>
+                    <input id = "input-date" placeholder = "Project date" type = "date"> <br>
+                    <label for = "input-time">Time: </label>
+                    <input id = "input-time" placeholder = "Project time" type = "time"> <br>
+                    <label for = "input-description">Description</label> <br>
+                    <input id = "input-description" placeholder = "Project description" type = "text" style = "width: 30em; height: 5em;"> <br>
+                    <br>
+                    <input type = 'submit' id = 'create-project' value = "Organize a New Project" class = "button--3d">
+                </form>
             </div>
         </div>
         <script src="src/trailpage.js" type = "module" async defer></script>

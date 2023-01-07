@@ -205,6 +205,25 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 BIG_ID++;
                 div.appendChild(heading);
 
+                const datetime = document.createElement("div");
+                let dateString = dict["date"].toString().replace("T", " ");
+                datetime.appendChild(document.createTextNode("Scheduled on " + dateString.substring(0, dateString.length - 14) + " at " + dateString.substring(10, dateString.length - 8)));
+                div.appendChild(datetime);
+                
+                const desch3 = document.createElement("h3");
+                desch3.appendChild(document.createTextNode("Description"));
+                div.appendChild(desch3);
+
+                const description = document.createElement("div");
+                description.appendChild(document.createTextNode(dict["description"]));
+                div.appendChild(description);
+
+                div.appendChild(document.createElement("br"));
+
+                const h3 = document.createElement("h3");
+                h3.appendChild(document.createTextNode("Participants: "));
+                div.appendChild(h3);
+
                 const participants = document.createElement("ol");
                 for(const person of dict["participants"]){
                     const li = document.createElement("li");
@@ -224,6 +243,11 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 div.appendChild(joinButton);
 
                 projectDiv.appendChild(div);
+            }
+
+            if(json.length > 0){
+
+                for(let i = 0; i < 15; i++) {document.getElementById("projects").appendChild(document.createElement("br"));}
             }
         });
 }

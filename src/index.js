@@ -20,6 +20,11 @@ const Get = (id) => {return document.getElementById(id)}; //shorthand for fetchi
 const searchTrails = (queryType, query) => {
     if(queryType == "city"){
         byCity(query);
+        return;
+    }
+    if(queryType == "zipcode"){
+        byZip(query);
+        return;
     }
 }
 
@@ -28,6 +33,13 @@ const byCity = (city) => {
     console.log(city);
 
     getReq(`cityTrail?city=${city}`);
+}
+
+const byZip = (zip) => {
+    zip = zip.replaceAll(" ", "");
+    console.log(zip);
+
+    getReq(`zipcodeTrail?zipcode=${zip}`);
 }
 
 checkServer();
