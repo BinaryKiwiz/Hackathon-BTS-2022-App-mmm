@@ -26,45 +26,45 @@
             <h2 class="conainter__header">
                 Create an account
             </h2>
-            <form action="" class="form">
+            <form action="" class="form" onsubmit="return false">
                 <div class="form__group">
 
                     <!-- username -->
-                    <label for="email" class = "form__label">
+                    <label for="user" class = "form__label">
                         Username
                     </label>
                     <div class="create-check">
-                    <input type="text" class="form__input" id="email"placeholder = "Enter a Username" autocomplete = "off">
+                    <input type="text" class="form__input" id="user"placeholder = "Enter a Username" autocomplete = "off">
               
                     </div>
-                    <p class="form__message" id="email__message"></p>
+                    <p class="form__message" id="user__message"></p>
                    
 
                     <!-- password -->
-                    <label for="password" class = "form__label">
+                    <label for="firstname" class = "form__label">
                         First Name
                     </label>
                     <div class="create-check">
-                    <input type="text" class="form__input" id="password"placeholder = "First Name" autocomplete = "off">
+                    <input type="text" class="form__input" id="firstname"placeholder = "First Name" autocomplete = "off">
                     <i class="gg-check form__green" ></i>
                     </div>
-                    <p class="form__message" id="password__message"></p>
+                    <p class="form__message" id="firstname__message"></p>
                    
 
                     <!-- confirmation -->
-                    <label for="confirmation" class = "form__label">
+                    <label for="lastname" class = "form__label">
                         Last Name
                     </label>
                     <div class="create-check">
-                    <input type="text" class="form__input" id="confirmation" placeholder = "Last Name" autocomplete = "off">
+                    <input type="text" class="form__input" id="lastname" placeholder = "Last Name" autocomplete = "off">
                     <i class="gg-check form__green" ></i>
                     </div>
-                    <p class="form__message" id="confirmation__message"></p>
+                    <p class="form__message" id="lastname__message"></p>
 
 
                     <!-- <button class="form__button" id = "sumbit">Next</button> -->
 
-                    <a href="account--name.html" id = "sumbit" class = "form__button">Submit</a>
+                    <button id = "submit" class = "form__button">Submit</button>
 
                     <p>Already have an account? <a class = "login--link" href="login.html">Login</a></p>
                     
@@ -77,6 +77,6 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="" async defer></script>
+        <script src="src/account--name.js" type = "module" async defer></script>
     </body>
 </html>

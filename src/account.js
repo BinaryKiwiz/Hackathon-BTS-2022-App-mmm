@@ -1,39 +1,34 @@
-var email = document.querySelector("#email");
-var password = document.querySelector("#password");
-var confirmation = document.querySelector("#confirmation");
-var errorMessage = document.querySelector(".error__message");
+function checkForm(){
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-
-
-submit.addEventListener("click", checkForm);
-
-function checkForm(e){
-    if(!email){
-        email = "";
-    }
-    e.preventDefault();//keeps user on page
-    console.log("log");
-    console.log(email);
-    if (email === ""){
+    if (!email){
         showWrong("email", "Enter an email");
+        return;
     }
-    else{
-        showRight("email");
-    }
-    if (password === ""){
+
+    showRight("email");
+
+    if (!password){
         showWrong("password", "Enter a password");
+        return;
     }
-    else{
-        showRight("password");
+    
+    showRight("password");
             
-    if (confirmation != password){
+    if (document.getElementById("confirmation").value != document.getElementById("password").value){
         showWrong("confirmation", "Passwords don't match");
+        return;
     }
-    else{
-        showRight("confirmation");
-    }
-    }
+    
+    showRight("confirmation");
+    proceed(email, password);
 }
+
+const proceed = (email, password) => {
+    window.location.href = `/account--name.html?email=${email}&pass=${password}`;
+}
+
 function showWrong(place, innerText){
     console.log("wrong");
     let change = document.getElementById(place+"__message");
@@ -62,3 +57,4 @@ function checkPasswords() {
     }
 }
 
+document.getElementById("submit").addEventListener("click", checkForm);
