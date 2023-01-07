@@ -1,11 +1,11 @@
+const apiLink = "https://hackathonbackend-bnldi3x7oq-uw.a.run.app/api";
+
 const Get = (id) => {return document.getElementById(id)}; //shorthand for fetching from DOM
 
-const data = {"number" : 50};
-
-async function getMessage(){
+async function post(data, path, link = apiLink){
     console.log("sending request");
 
-    fetch("https://hackathonbackend-bnldi3x7oq-uw.a.run.app/api/testServer", {
+    fetch(link + path, {
         method: "POST",
         headers:{
             "Content-Type" : "application/json"
@@ -22,4 +22,4 @@ async function getMessage(){
 .then(response => response.text())
 .then(data => Log(data)); */
 
-Get("post-button").addEventListener("click", getMessage);
+Get("post-button").addEventListener("click", () => {post({"number" : 50}, "/testServer/")});
