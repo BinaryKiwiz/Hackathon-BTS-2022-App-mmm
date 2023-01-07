@@ -1,4 +1,4 @@
-import { postReq } from "./requests.js";
+import { createAccount, postReq } from "./requests.js";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -41,7 +41,7 @@ const createUser = () => {
     document.getElementById("firstname").innerHTML = "";
     document.getElementById("lastname").innerHTML = "";
     
-    postReq(body, "user");
+    createAccount(body);
 }
 
 function showWrong(place, innerText){
