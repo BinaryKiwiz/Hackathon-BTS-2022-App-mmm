@@ -29,6 +29,7 @@ export async function getReq(path, link = apiLink){
         for(let i = 0; i < data.length; i++){
             const dict = data[i];
             const trail = new Trail(dict.name, dict.zipcode, dict.city, dict.state, dict.distance, dict.longitude, dict.latitude, dict.condition);
+            trail.setId(dict._id);
             Get("trail-list").appendChild(trail.getHTML);
         }
     })
