@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const id = urlParams.getAll('id');
 console.log(id);
 if(id.length == 0){
-    window.location.href = "/mainPage.html";
+    window.location.href = "./mainPage.html";
 }
 
 import Trail from "./trail.js";
