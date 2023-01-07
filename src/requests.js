@@ -109,6 +109,9 @@ export async function getTrailInfo(id, link = apiLink){
             let span = document.createElement("span");
             span.classList.add("userIcon");
             span.appendChild(document.createTextNode(users[i]));
+            span.id = BIG_ID;
+            updateProjectParticipant(BIG_ID, users[i]);
+            BIG_ID++;
             elm.append(span);
             elm.appendChild(document.createElement("br"));
             elm.appendChild(document.createTextNode(comments[i]));
@@ -129,7 +132,7 @@ export async function comment(trailid, userid, data, link = apiLink){
         },
         body: JSON.stringify({
             "_id" : trailid,
-            "users" : [userid],
+            "userid" : [userid],
             "reviews" : [data]
         })
     })
