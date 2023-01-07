@@ -18,9 +18,11 @@
     </head>
     <body>
         <div class = "header--box"></div>
-        <p> <a class = ".button--3d:active" href="index.html">Home</a> </p>
-    <div class="container">
-        <main class = "container__main">
+        <p> <a class = ".button--3d:active" href="index.html">Home</a>
+            <a class = ".button--3d:active" href="welcome.html">welcome</a>  </p>
+    <div class="container" >
+        <div class="center">
+        <!-- <main class = "container__main"> -->
             <h2 class="conainter__header">
                 Login
             </h2>
@@ -33,41 +35,42 @@
                     </label>
                     <div class="create-check">
                     <input type="text" class="form__input" id="email"placeholder = "Enter Email" autocomplete = "off">
-                    <i class="gg-check form__green" ></i>
+              
                     </div>
                     <p class="form__message" id="email__message"></p>
                    
 
                     <!-- password -->
-                    <label for="login-username" class = "form__label">
-                        Username
-                    </label>
-                    <div class="create-check">
-                    <input type="text" class="form__input" id="login-username"placeholder = "Enter username" autocomplete = "off">
-                    <i class="gg-check form__green" ></i>
-                    </div>
-                    <p class="form__message" id="login-username__message"></p>
-                   
-
-                    <!-- confirmation -->
-                    <label for="login-password" class = "form__label">
+                    <label for="Username" class = "form__label">
                         Password
                     </label>
                     <div class="create-check">
-                    <input type="text" class="form__input" id="login-password" placeholder = "Enter password" autocomplete = "off">
+                    <input type="text" class="form__input" id="password"placeholder = "Enter username" autocomplete = "off">
                     <i class="gg-check form__green" ></i>
                     </div>
-                    <p class="form__message" id="login-password__message"></p>
+                    <p class="form__message" id="password__message"></p>
+                   
+
+                    <!-- confirmation -->
+                    <label for="confirmation" class = "form__label">
+                        Password
+                    </label>
+                    <div class="create-check">
+                    <input type="text" class="form__input" id="confirmation" placeholder = "Enter password" autocomplete = "off">
+                    <i class="gg-check form__green" ></i>
+                    </div>
+                    <p class="form__message" id="confirmation__message"></p>
 
 
                     <!-- <button class="form__button" id = "sumbit">Next</button> -->
 
-                    <a href="account--name.html" id = "form--login-button" class = "form__button">Login</a>
+                    <a href="account--name.html" id = "sumbit" class = "form__button">Login</a>
 
                     <p>Already have an account? <a class = "login--link" href="login.html">Login</a></p>
                     
                 </div>
             </form>
+        <!-- </div> -->
         </div>
     </main>
         <!--[if lt IE 7]>
