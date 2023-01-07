@@ -29,8 +29,9 @@ const sendProject = () => {
     const body = {
         "trail" : trailid,
         "host" : id,
-        "date" : new Date(),
+        "date" : new Date(`${document.getElementById("input-date").value} ${document.getElementById("input-time").value}`),
         "old" : false,
+        "description" : document.getElementById("input-description").value,
         "participants" : [id]
     }
 

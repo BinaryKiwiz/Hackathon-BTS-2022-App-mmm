@@ -7,7 +7,8 @@ body {
     background-color: #A2BF9B;
     color:  rgb(62, 91, 73);;
     margin: 2in;
-    line-height: 2;
+    line-height: 3;
+
   }
 
 h1 {
@@ -41,9 +42,9 @@ h2{
 }
 .image {
   margin-top: 6%;
-  margin: 2%;
-  height: 30rem;
-  width: 30rem;
+  margin: 10%;
+  height: 25rem;
+  width: 25rem;
 }
 .rectangle {
     width: 100px;
