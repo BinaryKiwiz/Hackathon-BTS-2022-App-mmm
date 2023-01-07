@@ -1,5 +1,6 @@
-const trailLink = "https://prescriptiontrails.org/api/";
-const colors = {"good" : "green", "medium" : "yellow", "bad" : "orange", "horrible" : "red"};
+import { postReq } from "./requests.js";
+
+const colors = {"GOOD" : "green", "MID" : "yellow", "BAD" : "orange", "HORRIBLE" : "red"};
 
 class Trail{
     constructor(name, zipcode, city, state, longitude, latitude, condition){
@@ -26,6 +27,19 @@ class Trail{
         elm.style.backgroundColor = colors[this.condition];
         
         return elm;
+    }
+
+    postTrail(){
+        const data = {  "name" : this.name,
+                        "zipcode" : this.zipcode,
+                        "city" : this.city,
+                        "state" : this.state,
+                        "longitude" : this.longitude,
+                        "latitude" : this.latitude,
+                        "condition" : this.condition,
+                        "project" : null,
+                        "reviews" : this.reviews};
+        postReq(data, "trail")
     }
 }
 
