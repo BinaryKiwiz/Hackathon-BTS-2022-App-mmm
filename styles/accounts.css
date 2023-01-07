@@ -3,7 +3,7 @@
         justify-content: center;
         align-items: center;
         padding:2rem;
-        /* border-radius: 2rem; */
+        border-radius: 2rem;
         width: 20rem;
         margin-inline:auto;
 
@@ -13,9 +13,13 @@
 
         
 }
+
 .error__message{
     color:pink;
     
+}
+h2{
+    font-size: 3em;
 }
 
 .create-check{
@@ -25,8 +29,14 @@
 .form__message{
     color:red;
     background-color: white ;
-}
+    font-family: 'Gudea', sans-serif;
+    border-radius: 2em; 
 
+}
+.login--link{
+    text-decoration: none;
+    color: black;
+}
 .center {
     margin: auto;
     text-align: center;
@@ -40,7 +50,9 @@
 .form__label{
     /* position: absolute; */
 
-font-family: 'Quicksand', sans-serif;
+    font-family: 'Gudea', sans-serif;
+    font-size: 1.7em;
+    
 font-style: normal;
 align-self: center;
 
@@ -48,18 +60,21 @@ align-self: center;
 font-size: 24px;
 line-height: 30px; */
 }
+
 .form__input{
     /* position: absolute; */
     align-items: center;
     width: 25em;
+    height: 2em;
     background: white;
     text-align: center;
     align-self: center;
     margin: auto;
-    /* border-radius: 30px; */
+    border-radius: 30px; 
 }
 body{
     background-color: #A2bf9b;
+    font-family: 'Gudea', sans-serif;
 }
 
 .form__group{
@@ -101,8 +116,9 @@ body{
 }
 
 .form__button{
-    border-radius: 0rem;
+    border-radius: 1rem;
     text-decoration: none;
+    font-family: 'Gudea', sans-serif;
 
     /* width: 342px;
     height: 81px;
@@ -116,7 +132,7 @@ body{
     padding-bottom:0em;
 
     background: #A2BF9B;
-    font-family: 'DM Serif Display';
+
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
