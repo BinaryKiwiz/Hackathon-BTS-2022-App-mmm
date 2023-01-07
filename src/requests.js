@@ -119,6 +119,8 @@ export async function getTrailInfo(id, link = apiLink){
 
             document.getElementById("comments").appendChild(elm)
         }
+
+        getCityEmail(dict["city"]);
     });
 }
 
@@ -204,7 +206,7 @@ const updateProjectParticipant = (id, userid) =>{
 
 let BIG_ID = 1;
 let funny_id = "AAAAAAAAAAA";
-export async function getTrailProjects(userid, trailid, link = apiLink){
+export async function getTrailProjects(userid, trailid, city, link = apiLink){
     fetch(link + `project?trail=${trailid}`, {
         method: "GET",
         headers: {
@@ -242,6 +244,10 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 description.appendChild(document.createTextNode(dict["description"]));
                 div.appendChild(description);
 
+                const cityEmailSpan = document.createElement("span");
+                cityEmailSpan.id = "cityemail";
+                div.appendChild(cityEmailSpan);
+
                 div.appendChild(document.createElement("br"));
 
                 const h3 = document.createElement("h3");
@@ -274,6 +280,21 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 for(let i = 0; i < 15; i++) {document.getElementById("projects").appendChild(document.createElement("br"));}
             }
         });
+}
+
+export async function getCityEmail(city, id){
+    fetch(apiLink + "email?city=" + city, {
+        method: "GET",
+        headers:{
+            "Content-Type" : "application/json"
+        }
+    })
+    .catch((err) => console.log(err))
+    .then((response) => response.json())
+    .then((json) => {
+        document.getElementById("cityemail").innerHTML = "<b>Contact the district advisor at:</b> " + json;
+        console.log(json);
+    })
 }
 
 export async function createAccount(data, link = apiLink){
