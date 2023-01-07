@@ -1,0 +1,16 @@
+html {
+    font-family: "Calibri";
+}
+
+body {
+    background-color: #A2BF9B;
+    color: white;
+    margin: 2in;
+    line-height: 2;
+  }
+
+h1 {
+    font-family: 'Gudea';
+    color: white;
+    text-align: center;
+  }
