@@ -1,4 +1,6 @@
-const apiLink = "https://hackathonbackend-bnldi3x7oq-uw.a.run.app/api";
+import Trail from "./trail.js";
+
+const apiLink = "https://hackathonbackend-bnldi3x7oq-uw.a.run.app/api/";
 
 const Get = (id) => {return document.getElementById(id)}; //shorthand for fetching from DOM
 
@@ -31,5 +33,6 @@ async function getReq(path, link = apiLink){
 .then(response => response.text())
 .then(data => Log(data)); */
 
-Get("post-button").addEventListener("click", () => {postReq({"number" : 50}, "/testServer/")});
-getReq("/checkServer/");
+const testTrail = new Trail("Test Trail", 91362, "Thousand Oaks", "CA", 100, 50, "dirty");
+
+getReq("checkServer/");
