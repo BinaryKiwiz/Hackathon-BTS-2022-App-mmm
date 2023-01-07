@@ -173,7 +173,7 @@ const joinProject = (id, projectid, link = apiLink) => {
     });
 }
 
-const updateProjectOwner = (id, userid) => {
+const updateProjectOwner = (id, nextid, userid) => {
     fetch(apiLink + "user?_id=" + userid, {
         method: "GET",
         headers: {
@@ -184,6 +184,7 @@ const updateProjectOwner = (id, userid) => {
     .then((response) => response.json())
     .then((json) => {
         document.getElementById(id).innerHTML = `Project Organized by ${json["firstName"]} ${json["lastName"]}`;
+        document.getElementById(nextid).innerHTML = "Contact them at " + json["email"];
     })
 }
 
@@ -201,7 +202,8 @@ const updateProjectParticipant = (id, userid) =>{
     })
 }
 
-let BIG_ID = 0;
+let BIG_ID = 1;
+let funny_id = "AAAAAAAAAAA";
 export async function getTrailProjects(userid, trailid, link = apiLink){
     fetch(link + `project?trail=${trailid}`, {
         method: "GET",
@@ -220,9 +222,12 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 const heading = document.createElement("h2");
                 heading.appendChild(document.createTextNode(`Project Organized by ${dict["host"]}`))
                 heading.id = BIG_ID;
-                updateProjectOwner(BIG_ID, dict["host"]);
+                const mailspan = document.createElement("div");
+                mailspan.id = -BIG_ID;
+                updateProjectOwner(BIG_ID, -BIG_ID, dict["host"]);
                 BIG_ID++;
                 div.appendChild(heading);
+                div.appendChild(mailspan);
 
                 const datetime = document.createElement("div");
                 let dateString = dict["date"].toString().replace("T", " ");
@@ -247,9 +252,9 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 for(const person of dict["participants"]){
                     const li = document.createElement("li");
                     li.appendChild(document.createTextNode(person));
-                    li.id = BIG_ID;
-                    updateProjectParticipant(BIG_ID, person);
-                    BIG_ID++;
+                    li.id = funny_id;
+                    updateProjectParticipant(funny_id, person);
+                    funny_id += "A";
 
                     participants.appendChild(li);
                 }
