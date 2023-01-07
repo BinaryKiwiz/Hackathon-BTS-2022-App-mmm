@@ -1,16 +1,21 @@
+
+
 html {
     font-family: "Calibri";
 }
 
-body {
+h2 {
+    font-family: 'Gudea', sans-serif;
+   
     background-color: #A2BF9B;
-    color: white;
+    color: rgb(62, 91, 73);
     margin: 2in;
     line-height: 2;
+    text-align: center;
   }
 
 h1 {
-    font-family: 'Gudea';
-    color: white;
+    font-family: 'Fredoka', sans-serif;
+    color: rgb(28, 28, 28);
     text-align: center;
   }
