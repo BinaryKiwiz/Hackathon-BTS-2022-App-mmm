@@ -24,7 +24,7 @@
             <a class = "button--basic" onclick = "window.location = 'login.html' + window.location.search"">Log in</a>
         </nav>
         <div>
-            <h1>
+            <h1 id = "name">
                 Name of Trail
             </h1>
             <p style = "font-weight: bold;">
@@ -37,7 +37,17 @@
             <h2>
                 Comments
             </h2>
+            <p id = "comments">
+
+            </p>
+            <br>
+            <form onsubmit = "return false">
+                <input id = "comment-box" type = "text" placeholder = "Comment..." style = "width: 50%; height: 5em;">
+                <br>
+                <br>
+                <input type = "submit" class = "button--3d" id = "add-comment" value = "Comment"></input>
+            </form>
         </div>
-        <script src="" async defer></script>
+        <script src="src/trailpage.js" type = "module" async defer></script>
     </body>
 </html>

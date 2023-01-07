@@ -27,8 +27,8 @@ export async function login(elm, user, pass, data, link = apiLink){
     .then(response => response.json())
     .then(id => {
         if(id == "Incorrect Password"){
-            elm.innerHTML = "Incorrect Password";
-            console.log("Incorrect Password");  
+            elm.innerHTML = "Incorrect Credentials";
+            console.log("Incorrect Credentials");  
             return;
         }
 
@@ -78,4 +78,41 @@ export async function patchReq(data, path, query, link = apiLink){
     .catch((err) => console.log(err))
     .then(response => response.text())
     .then(response => console.log(response));
+}
+
+export async function getTrailInfo(id, link = apiLink){
+    fetch(`${link}idTrail?_id=${id}`, {
+        method: "GET",
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    })
+    .catch((err) => console.log(err))
+    .then(response => response.json())
+    .then(json => {
+        const dict = json[0];
+        document.getElementById("name").innerHTML = dict["name"];
+        document.getElementById("distance").innerHTML = dict["distance"];
+        document.getElementById("zip").innerHTML = dict["zipcode"];
+        document.getElementById("city").innerHTML = dict["city"];
+        document.getElementById("state").innerHTML = dict["state"];
+        document.getElementById("condition").innerHTML = dict["condition"];
+
+        const comments = dict["comments"];
+
+        if(!comments){return;}
+
+        for(let comment of comments){
+            let elm = document.createElement("span");
+            elm.appendChild(document.createTextNode(comment["user"]));
+            elm.appendChild(document.createElement("br"));
+            elm.appendChild(document.createTextNode(comment["body"]));
+
+            document.getElementById("comments").appendChild(elm)
+        }
+    });
+}
+
+export async function comment(trailid, userid, body, link = apiLink){
+
 }

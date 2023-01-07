@@ -8,7 +8,6 @@ if(id.length == 0){
 }
 
 import Trail from "./trail.js";
-import { createPage } from "./trailpage.js";
 import { getReq, checkServer } from "./requests.js";
 
 const trailAPI = "https://prescriptiontrails.org/api/";
