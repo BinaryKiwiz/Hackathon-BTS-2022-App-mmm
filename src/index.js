@@ -25,6 +25,7 @@ const searchTrails = (queryType, query) => {
 
 const byCity = (city) => {
     city = city.replaceAll(" ", "+").toLowerCase();
+    console.log(city);
 
     getReq(`cityTrail?city=${city}`);
 }

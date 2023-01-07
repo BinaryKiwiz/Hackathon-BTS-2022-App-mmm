@@ -151,6 +151,37 @@ const joinProject = (id, projectid, link = apiLink) => {
     .catch((err) => console.log(err));
 }
 
+const updateProjectOwner = (id, userid) => {
+    fetch(apiLink + "user?_id=" + userid, {
+        method: "GET",
+        headers: {
+            "Content-Type" : "application.json"
+        }
+    })
+    .catch((err) => console.log(err))
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json)
+        document.getElementById(id).innerHTML = `Project Organized by ${json["firstName"]} ${json["lastName"]}`;
+    })
+}
+
+const updateProjectParticipant = (id, userid) =>{
+    fetch(apiLink + "user?_id=" + userid, {
+        method: "GET",
+        headers: {
+            "Content-Type" : "application.json"
+        }
+    })
+    .catch((err) => console.log(err))
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json)
+        document.getElementById(id).innerHTML = `${json["firstName"]} ${json["lastName"]}`;
+    })
+}
+
+let BIG_ID = 0;
 export async function getTrailProjects(userid, trailid, link = apiLink){
     fetch(link + `project?trail=${trailid}`, {
         method: "GET",
@@ -169,12 +200,18 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
 
                 const heading = document.createElement("h2");
                 heading.appendChild(document.createTextNode(`Project Organized by ${dict["host"]}`))
+                heading.id = BIG_ID;
+                updateProjectOwner(BIG_ID, dict["host"]);
+                BIG_ID++;
                 div.appendChild(heading);
 
                 const participants = document.createElement("ol");
                 for(const person of dict["participants"]){
                     const li = document.createElement("li");
                     li.appendChild(document.createTextNode(person));
+                    li.id = BIG_ID;
+                    updateProjectParticipant(BIG_ID, person);
+                    BIG_ID++;
 
                     participants.appendChild(li);
                 }
