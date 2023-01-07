@@ -26,7 +26,7 @@ function checkForm(){
 }
 
 const proceed = (email, password) => {
-    window.location.href = `HackathonFrontend/account--name.html?email=${email}&pass=${password}`;
+    window.location.href = `account--name.html?email=${email}&pass=${password}`;
 }
 
 function showWrong(place, innerText){
