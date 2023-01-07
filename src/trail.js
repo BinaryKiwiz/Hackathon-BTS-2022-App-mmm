@@ -33,7 +33,7 @@ class Trail{
         
         let title = document.createElement("a");
         title.style.padding = "1em";
-        title.href = `HackathonFrontend/trail.html?trailid=${this.id}&id=${id}`;
+        title.href = `trail.html?trailid=${this.id}&id=${id}`;
         title.appendChild(document.createTextNode(this.name));
         trailElm.appendChild(title);
 
