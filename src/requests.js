@@ -12,8 +12,23 @@ export async function postReq(data, path, link = apiLink){
         body: JSON.stringify(data)
     })
     .catch((err) => console.log(err))
-    .then(response => response.text())
+    .then(response => response.json())
     .then(response => console.log(response));
+}
+
+export async function createAccount(data, link = apiLink){
+    fetch(link + "user", {
+        method: "POST",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch((err) => console.log(err))
+    .then(response => response.text())
+    .then(id => {
+        window.location.href = `/index.html?id=${id}`;
+    });
 }
 
 export async function getReq(path, link = apiLink){
