@@ -4,7 +4,6 @@ html {
 
 body{
     margin: 0;
-
 }
 
 nav{
@@ -14,6 +13,7 @@ nav{
     gap: 1em;
     align-items: center;
     color: white;
+    height: 3em;
 }
 
 div{
