@@ -1,11 +1,11 @@
 import Trail from "./trail.js";
-import { getReq } from "./requests.js";
+import { getReq, checkServer } from "./requests.js";
 
 const trailAPI = "https://prescriptiontrails.org/api/";
 const Get = (id) => {return document.getElementById(id)}; //shorthand for fetching from DOM
 
-const testTrail = new Trail("Test Trail", 91362, "Thousand Oaks", "CA", 6, 100, 50, "BAD");
-Get("trail-list").appendChild(testTrail.getHTML);
+//const testTrail = new Trail("Test Trail", 91362, "Thousand Oaks", "CA", 6, 100, 50, "BAD");
+//Get("trail-list").appendChild(testTrail.getHTML);
 
 const searchTrails = (queryType, query) => {
     if(queryType == "city"){
@@ -14,14 +14,12 @@ const searchTrails = (queryType, query) => {
 }
 
 const byCity = (city) => {
-    
+    city = city.replaceAll(" ", "+").toLowerCase();
+
+    getReq(`cityTrail?city=${city}`);
 }
 
-console.log(document.querySelector("input[name = 'search-by']:checked"));
-
-//Get("trail-search-query").value
-
-getReq("checkServer/");
+checkServer();
 
 Get("search-trails").addEventListener("click", () => {
     const queryType = document.querySelector("input[name = 'search-by']:checked");
