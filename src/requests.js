@@ -114,5 +114,79 @@ export async function getTrailInfo(id, link = apiLink){
 }
 
 export async function comment(trailid, userid, body, link = apiLink){
+    fetch(`${link}/trail`, {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    })
+}
 
+export async function createProject(trailid, userid, data, link = apiLink){
+    fetch(link + "project", {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch((err) => console.log(err))
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}
+
+const joinProject = (id, projectid, link = apiLink) => {
+    const data = {
+        "_id" : projectid,
+        "participants" : [id]
+    }
+
+    fetch(`${link}addProjectParticipants`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch((err) => console.log(err));
+}
+
+export async function getTrailProjects(userid, trailid, link = apiLink){
+    fetch(link + `project?trail=${trailid}`, {
+        method: "GET",
+        headers: {
+            "Content-Type" : "application/json"
+        }})
+        .catch((err) => console.log(err))
+        .then((response) => response.json())
+        .then((json) => {
+            console.log(json);
+            const projectDiv = document.getElementById("projects");
+
+            for(const dict of json){
+                const div = document.createElement("div");
+                div.classList.add("project");
+
+                const heading = document.createElement("h2");
+                heading.appendChild(document.createTextNode(`Project Organized by ${dict["host"]}`))
+                div.appendChild(heading);
+
+                const participants = document.createElement("ol");
+                for(const person of dict["participants"]){
+                    const li = document.createElement("li");
+                    li.appendChild(document.createTextNode(person));
+
+                    participants.appendChild(li);
+                }
+                div.appendChild(participants);
+
+                const joinButton = document.createElement("button");
+                joinButton.classList.add("button--basic");
+                joinButton.appendChild(document.createTextNode("Join Project"));
+                joinButton.onclick = () => {joinProject(userid, dict["_id"]);}
+                div.appendChild(joinButton);
+
+                projectDiv.appendChild(div);
+            }
+        });
 }

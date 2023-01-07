@@ -12,6 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/buttons.css">
+        <link rel="stylesheet" href="styles/comment.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -24,30 +27,43 @@
             <a class = "button--nav" onclick = "window.location = 'lister.html' + window.location.search">Make a Listing</a>
             <a class = "button--basic" onclick = "window.location = 'login.html' + window.location.search">Log in</a>
         </nav>
-        <div>
-            <h1 id = "name">
-                Name of Trail
-            </h1>
-            <p style = "font-weight: bold;">
-                Distance: <span id = "distance"></span> <br>
-                Zipcode: <span id="zip"></span> <br>
-                City: <span id="city"></span> <br>
-                State: <span id="state"></span> <br>
-                Condition: <span id="condition"></span> <br>
-            </p>
-            <h2>
-                Comments
-            </h2>
-            <p id = "comments">
+        <div style = "display: flex; flex-direction: row; gap: 5em;">
+            <div id = "trail-info" style = "width: 35em;">
+                <h1 id = "name">
+                    Name of Trail
+                </h1>
+                <p style = "font-weight: bold;">
+                    Distance: <span id = "distance"></span> <br>
+                    Zipcode: <span id="zip"></span> <br>
+                    City: <span id="city"></span> <br>
+                    State: <span id="state"></span> <br>
+                    Condition: <span id="condition"></span> <br>
+                </p>
+                <h2>
+                    Comments
+                </h2>
+                <p id = "comments">
 
-            </p>
-            <br>
-            <form onsubmit = "return false">
-                <input id = "comment-box" type = "text" placeholder = "Comment..." style = "width: 50%; height: 5em;">
+                </p>
                 <br>
-                <br>
-                <input type = "submit" class = "button--3d" id = "add-comment" value = "Comment"></input>
-            </form>
+                <form onsubmit = "return false">
+                    <input id = "comment-box" type = "text" placeholder = "Comment..." style = "width: 100%; height: 5em;">
+                    <br>
+                    <br>
+                    <input type = "submit" class = "button--3d" id = "add-comment" value = "Comment"></input>
+                </form>
+            </div>
+            <div id = "project-info" style = "width: 50em">
+                <h1>
+                    Projects
+                </h1>
+                <div id = "projects">
+
+                </div>
+                <button class = "button--3d" id = "create-project">
+                    Organize a new project
+                </button>
+            </div>
         </div>
         <script src="src/trailpage.js" type = "module" async defer></script>
     </body>
