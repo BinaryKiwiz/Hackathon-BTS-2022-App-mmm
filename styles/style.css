@@ -4,18 +4,23 @@ html {
 
 body{
     margin: 0;
+    background-color: #A2bf9b;
 }
 
 nav{
     padding: 1em;
-    background-color: black;
+    background-color: white;
     display: flex;
     gap: 1em;
     align-items: center;
-    color: white;
+    color: #4A6145;
     height: 3em;
 }
 
 div{
     margin: 1em;
+}
+
+h1{
+    color: black;
 }

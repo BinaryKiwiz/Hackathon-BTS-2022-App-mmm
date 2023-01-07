@@ -1,4 +1,14 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const id = urlParams.getAll('id');
+console.log(id);
+if(id.length == 0){
+    window.location.href = "/mainPage.html";
+}
+
 import Trail from "./trail.js";
+import { createPage } from "./trailpage.js";
 import { getReq, checkServer } from "./requests.js";
 
 const trailAPI = "https://prescriptiontrails.org/api/";
@@ -6,6 +16,7 @@ const Get = (id) => {return document.getElementById(id)}; //shorthand for fetchi
 
 //const testTrail = new Trail("Test Trail", 91362, "Thousand Oaks", "CA", 6, 100, 50, "BAD");
 //Get("trail-list").appendChild(testTrail.getHTML);
+//createPage(testTrail);
 
 const searchTrails = (queryType, query) => {
     if(queryType == "city"){

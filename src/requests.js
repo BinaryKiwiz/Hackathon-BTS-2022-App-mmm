@@ -12,8 +12,23 @@ export async function postReq(data, path, link = apiLink){
         body: JSON.stringify(data)
     })
     .catch((err) => console.log(err))
-    .then(response => response.text())
+    .then(response => response.json())
     .then(response => console.log(response));
+}
+
+export async function createAccount(data, link = apiLink){
+    fetch(link + "user", {
+        method: "POST",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch((err) => console.log(err))
+    .then(response => response.text())
+    .then(id => {
+        window.location.href = `/index.html?id=${id}`;
+    });
 }
 
 export async function getReq(path, link = apiLink){
@@ -29,6 +44,7 @@ export async function getReq(path, link = apiLink){
         for(let i = 0; i < data.length; i++){
             const dict = data[i];
             const trail = new Trail(dict.name, dict.zipcode, dict.city, dict.state, dict.distance, dict.longitude, dict.latitude, dict.condition);
+            trail.setId(dict._id);
             Get("trail-list").appendChild(trail.getHTML);
         }
     })
