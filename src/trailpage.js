@@ -10,6 +10,8 @@ getTrailInfo(trailid);
 getTrailProjects(id, trailid);
 
 const sendComment = () => {
+    let commentBody = document.getElementById("comment-box").value;
+
     let elm = document.createElement("div");
     elm.classList.add("comment");
     let span = document.createElement("span");
@@ -17,12 +19,12 @@ const sendComment = () => {
     span.appendChild(document.createTextNode("You"));
     elm.append(span);
     elm.appendChild(document.createElement("br"));
-    elm.appendChild(document.createTextNode(document.getElementById("comment-box").value));
+    elm.appendChild(document.createTextNode(commentBody));
     document.getElementById("comment-box").value = "";
 
     document.getElementById("comments").appendChild(elm);
 
-    comment(trailid, id);
+    comment(trailid, id, commentBody);
 }
 
 const sendProject = () => {

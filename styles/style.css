@@ -21,7 +21,9 @@ nav{
 {
     font-family: 'Paytone One', sans-serif;
     color: rgb(38, 57, 45);
+    width: 20em !important;
 }
+
 @media only screen and (max-width: 992px){
     nav{
         display: block;
@@ -34,7 +36,17 @@ div{
 }
 
 h1{
-    color: black;
+    font-family: 'Paytone One', sans-serif;
+   
+    color: rgb(38, 57, 45);
+}
+
+.letsfind{
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: rgb(38, 57, 45);
+    text-align: center;
+
 }
 
 .list--title{

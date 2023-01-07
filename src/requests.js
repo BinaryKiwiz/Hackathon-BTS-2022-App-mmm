@@ -98,28 +98,47 @@ export async function getTrailInfo(id, link = apiLink){
         document.getElementById("state").innerHTML = dict["state"];
         document.getElementById("condition").innerHTML = dict["condition"];
 
-        const comments = dict["comments"];
+        const comments = dict["reviews"];
+        const users = dict["users"];
 
         if(!comments){return;}
 
-        for(let comment of comments){
-            let elm = document.createElement("span");
-            elm.appendChild(document.createTextNode(comment["user"]));
+        for(let i = 0; i < comments.length; i++){
+            let elm = document.createElement("div");
+            elm.classList.add("comment");
+            let span = document.createElement("span");
+            span.classList.add("userIcon");
+            span.appendChild(document.createTextNode(users[i]));
+            span.id = BIG_ID;
+            updateProjectParticipant(BIG_ID, users[i]);
+            BIG_ID++;
+            elm.append(span);
             elm.appendChild(document.createElement("br"));
-            elm.appendChild(document.createTextNode(comment["body"]));
+            elm.appendChild(document.createTextNode(comments[i]));
+
 
             document.getElementById("comments").appendChild(elm)
         }
     });
 }
 
-export async function comment(trailid, userid, body, link = apiLink){
-    fetch(`${link}/trail`, {
+export async function comment(trailid, userid, data, link = apiLink){
+    console.log(userid);
+
+    fetch(`${link}addReviews`, {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
-        }
+        },
+        body: JSON.stringify({
+            "_id" : trailid,
+            "userid" : [userid],
+            "reviews" : [data]
+        })
     })
+    .catch((err) => console.log(err))
+    .then((response) => response.json())
+    .then((response) => console.log(response));
 }
 
 export async function createProject(trailid, userid, data, link = apiLink){
@@ -132,7 +151,7 @@ export async function createProject(trailid, userid, data, link = apiLink){
     })
     .catch((err) => console.log(err))
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((json) => location.reload());
 }
 
 const joinProject = (id, projectid, link = apiLink) => {
@@ -148,7 +167,10 @@ const joinProject = (id, projectid, link = apiLink) => {
         },
         body: JSON.stringify(data)
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .then(() => {
+        location.reload();
+    });
 }
 
 const updateProjectOwner = (id, userid) => {
@@ -161,7 +183,6 @@ const updateProjectOwner = (id, userid) => {
     .catch((err) => console.log(err))
     .then((response) => response.json())
     .then((json) => {
-        console.log(json)
         document.getElementById(id).innerHTML = `Project Organized by ${json["firstName"]} ${json["lastName"]}`;
     })
 }
@@ -176,7 +197,6 @@ const updateProjectParticipant = (id, userid) =>{
     .catch((err) => console.log(err))
     .then((response) => response.json())
     .then((json) => {
-        console.log(json)
         document.getElementById(id).innerHTML = `${json["firstName"]} ${json["lastName"]}`;
     })
 }
@@ -191,7 +211,6 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
         .catch((err) => console.log(err))
         .then((response) => response.json())
         .then((json) => {
-            console.log(json);
             const projectDiv = document.getElementById("projects");
 
             for(const dict of json){
