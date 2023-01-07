@@ -13,10 +13,18 @@
 
         
 }
+.error__message{
+    color:pink;
+    
+}
 
 .create-check{
     justify-content: center;
     align-items: center;
+}
+.form__message{
+    color:red;
+    background-color: white ;
 }
 
 .center {
