@@ -37,10 +37,17 @@
             color: rgb(38, 57, 45);
         }
 
+        .font--detail {
+            font-family: 'Gudea', sans-serif;
+            color: rgb(38, 57, 45);
+        }
+
         h1 {
             font-family: 'Fredoka', sans-serif;
             color: rgb(28, 28, 28);
         }
+
+        
         </style>
     </head>
     <body>
@@ -48,7 +55,8 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <nav>
-            <span style = "font-weight: bold; font-size: 2em; width: 65%">Dirty Trails</span>
+            <span class = "font--title" style = "font-weight: bold; font-size: 2em; width: 65%">TransformATrail</span>
+
             <a class = "button--nav" onclick = "window.location = 'index.html' + window.location.search">Go Home</a>
             <a class = "button--nav" onclick = "window.location = 'mission.html' + window.location.search">Our Mission</a>
             <a class = "button--nav" onclick = "window.location = 'lister.html' + window.location.search">Make a Listing</a>
@@ -59,7 +67,7 @@
                 <h1 id = "name">
                     Name of Trail
                 </h1>
-                <p style = "font-weight: bold;">
+                <p style = "font-weight: bold;" class = "font--detail">
                     Distance: <span id = "distance"></span> <br>
                     Zipcode: <span id="zip"></span> <br>
                     City: <span id="city"></span> <br>
