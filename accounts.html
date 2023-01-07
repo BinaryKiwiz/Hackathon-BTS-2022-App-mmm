@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel = "stylesheet" href = "styles/buttons.css">
         <link rel = "stylesheet" href = "styles/accounts.css">
+
     </head>
     <body>
         <div class = "header--box"></div>
@@ -60,11 +61,13 @@
                     <i class="gg-check form__green" ></i>
                     </div>
                     <p class="form__message" id="confirmation__message"></p>
+                    <p id="message"></p>
 
 
-                    <!-- <button class="form__button" id = "sumbit">Next</button> -->
+                    <button class="form__button" id = "submit">Next</button>
+                    <p class = "error__message"></p>
 
-                    <a href="account--name.html" id = "sumbit" class = "form__button">Next</a>
+                    <!-- <a href="account--name.html" id = "sumbit" class = "form__button">Next</a> -->
 
                     <p>Already have an account? <a class = "login--link" href="login.html">Login</a></p>
                     
@@ -77,6 +80,6 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="" async defer></script>
+        <script src="src/account.js" type = "module" async defer></script>
     </body>
 </html>
