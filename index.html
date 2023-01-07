@@ -24,17 +24,17 @@
             <h1>
                 Nearby Trails
             </h1>
-            <form>
+            <form onsubmit = "return false">
                 Search by
                 <br>
-                <input type = "radio" id = "zipcode" name = "search-by">
-                <label for = "zipcode">zipcode</label>
+                <!-- <input type = "radio" id = "zip" name = "search-by">
+                <label for = "zipcode">zipcode</label> -->
                 <input type = "radio" id = "city" name = "search-by">
                 <label for = "zipcode">city</label>
-                <input type = "radio" id = "state" name = "search-by">
-                <label for = "zipcode">state</label>
+                <!-- <input type = "radio" id = "state" name = "search-by">
+                <label for = "zipcode">state</label> -->
                 <br>
-                <input type = "text">
+                <input type = "text" id = "trail-search-query">
                 <input type = "submit" id = "search-trails" value = "Search">
             </form>
             <ul style = "list-style: none" id = "trail-list">
