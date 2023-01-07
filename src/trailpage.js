@@ -10,8 +10,11 @@ getTrailInfo(trailid);
 
 const sendComment = () => {
     let elm = document.createElement("div");
-    elm.class = "comment";
-    elm.appendChild(document.createTextNode("You"));
+    elm.classList.add("comment");
+    let span = document.createElement("span");
+    span.classList.add("userIcon");
+    span.appendChild(document.createTextNode("You"));
+    elm.append(span);
     elm.appendChild(document.createElement("br"));
     elm.appendChild(document.createTextNode(document.getElementById("comment-box").value));
     document.getElementById("comment-box").value = "";
