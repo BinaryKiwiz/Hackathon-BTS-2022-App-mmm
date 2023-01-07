@@ -1,0 +1,19 @@
+body {
+    background-color: #A2BF9B;
+    color: white;
+    margin: 2in;
+    line-height: 2;
+  }
+
+h1 {
+    font-family: 'Gudea';
+    color: white;
+    text-align: center;
+  }
+
+.rectangle {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(36, 58, 36);
+    margin: 1.5in;
+}
