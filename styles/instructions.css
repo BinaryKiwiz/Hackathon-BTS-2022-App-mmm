@@ -26,12 +26,14 @@ h1 {
     justify-content: center;
     width: 60%;
     padding: 1rem;
+    line-height: 3;
   }
   .column2 {
     text-align: center;
     justify-content: center;
     width: 35%;
     padding: 1rem;
+    line-height: 3;
   }
 ul li{
   color: rgb(20, 24, 21);
