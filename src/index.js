@@ -4,7 +4,7 @@ import { getReq } from "./requests.js";
 const trailAPI = "https://prescriptiontrails.org/api/";
 const Get = (id) => {return document.getElementById(id)}; //shorthand for fetching from DOM
 
-const testTrail = new Trail("Test Trail", 91362, "Thousand Oaks", "CA", 100, 50, "BAD");
+const testTrail = new Trail("Test Trail", 91362, "Thousand Oaks", "CA", 6, 100, 50, "BAD");
 Get("trail-list").appendChild(testTrail.getHTML);
 
 const searchTrails = (queryType, query) => {

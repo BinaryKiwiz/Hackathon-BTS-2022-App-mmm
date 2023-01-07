@@ -8,8 +8,9 @@ const addTrail = () => {
     const long = document.getElementById("long").value;
     const lat = document.getElementById("lat").value;
     const condition = document.getElementById("cond").value;
+    const distance = document.getElementById("dist").value;
     
-    const trail = new Trail(name, zipcode, city, state, long, lat, condition);
+    const trail = new Trail(name, zipcode, city, state, distance, long, lat, condition);
     trail.postTrail();
 }
 
