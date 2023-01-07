@@ -1,0 +1,65 @@
+.container{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding:2rem;
+        border-radius: 2rem;
+        width: 20rem;
+        margin-inline:auto;
+
+        color:white;
+        background-color: #4A6145;
+        /* font-family: u.$login-font; */
+
+        
+}
+.form__label{
+    /* position: absolute; */
+
+font-family: 'Quicksand', sans-serif;
+font-style: normal;
+/* font-weight: 400;
+font-size: 24px;
+line-height: 30px; */
+}
+.form__input{
+    /* position: absolute; */
+
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+body{
+    background-color: #A2bf9b;
+}
+
+
+.form__label{
+    display: block;
+}
+.form__green{
+    color: green;
+}
+
+.form__button{
+    border-radius: 10rem;
+
+}
+
+.create-check{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header--box{
+
+
+    left: 0px;
+    top: 0px;
+    height: 136px;
+    margin: 0px;
+    padding: 0px;
+ 
+
+
+    background: #FEFDFD;
+}
