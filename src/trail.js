@@ -14,6 +14,7 @@ class Trail{
         this.dist = dist;
 
         this.reviews = [];
+        this.id = null;
     }
 
     get getHTML(){
@@ -21,6 +22,7 @@ class Trail{
         let trailElm = document.createElement("div");
         
         let title = document.createElement("a");
+        title.href = `trail.html?${this.id}`;
         title.appendChild(document.createTextNode(this.name));
         trailElm.appendChild(title);
 
@@ -28,6 +30,10 @@ class Trail{
         elm.style.backgroundColor = colors[this.condition];
         
         return elm;
+    }
+
+    setId(id){
+        this.id = id;
     }
 
     postTrail(){
