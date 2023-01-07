@@ -190,3 +190,18 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
             }
         });
 }
+
+export async function createAccount(data, link = apiLink){
+    fetch(link + "user", {
+        method: "POST",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch((err) => console.log(err))
+    .then(response => response.text())
+    .then(id => {
+        window.location.href = `/index.html?id=${id}`;
+    });
+}
