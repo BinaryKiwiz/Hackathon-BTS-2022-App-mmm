@@ -25,3 +25,11 @@ div{
 h1{
     color: black;
 }
+
+.list--title{
+    font-size: 2.5em;
+}
+.form--info{
+    font-family: 'Gudea', sans-serif;
+   
+}
