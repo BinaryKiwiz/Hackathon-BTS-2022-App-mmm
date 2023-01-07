@@ -44,7 +44,7 @@ class Trail{
         zip.appendChild(document.createTextNode("Zipcode: " + this.zipcode));
 
         let distance = document.createElement("div");
-        distance.appendChild(document.createTextNode("Distance: " + this.dist));
+        distance.appendChild(document.createTextNode("Distance: " + this.dist + " miles"));
 
         elm.appendChild(trailElm);
         elm.appendChild(cond);
