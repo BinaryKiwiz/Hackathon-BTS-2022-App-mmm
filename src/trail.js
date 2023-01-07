@@ -18,11 +18,16 @@ class Trail{
     }
 
     get getHTML(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        const id = urlParams.get("id");
+
         let elm = document.createElement("li");
         let trailElm = document.createElement("div");
         
         let title = document.createElement("a");
-        title.href = `trail.html?${this.id}`;
+        title.href = `trail.html?trailid=${this.id}&id=${id}`;
         title.appendChild(document.createTextNode(this.name));
         trailElm.appendChild(title);
 
