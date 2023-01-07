@@ -14,15 +14,7 @@ const searchTrails = (queryType, query) => {
 }
 
 const byCity = (city) => {
-    fetch(trailAPI + "filter/?by=city&city=" + city + "&offset=0&count=10", {
-        method: "GET"
-    })
-    .catch((err) => console.log(err))
-    .then((response) => response.json())
-    .then((response) => JSON.parse(response))
-    .then((data) => {
-        console.log(data);
-    })
+    
 }
 
 console.log(document.querySelector("input[name = 'search-by']:checked"));
