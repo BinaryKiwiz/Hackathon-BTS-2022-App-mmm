@@ -21,9 +21,8 @@ nav{
 {
     font-family: 'Paytone One', sans-serif;
     color: rgb(38, 57, 45);
+    width: 20em !important;
 }
-
-
 
 div{
     margin: 1em;
