@@ -22,7 +22,11 @@ nav{
     font-family: 'Paytone One', sans-serif;
     color: rgb(38, 57, 45);
 }
-
+@media only screen and (max-width: 992px){
+    nav{
+        display: block;
+    }
+  }
 
 
 div{

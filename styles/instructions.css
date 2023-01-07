@@ -7,7 +7,7 @@ body {
     background-color: #A2BF9B;
     color:  rgb(62, 91, 73);;
     margin: 2in;
-    line-height: 3;
+    /* line-height: 3; */
 
   }
 
@@ -20,7 +20,6 @@ h1 {
   .columns {
     display: flex;
     justify-content: space-between;
-    margin: 2rem 0;
   }
   .column1 {
     text-align: center;
