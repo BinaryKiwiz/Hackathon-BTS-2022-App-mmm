@@ -16,17 +16,22 @@ export async function postReq(data, path, link = apiLink){
     .then(response => console.log(response));
 }
 
-export async function createAccount(data, link = apiLink){
-    fetch(link + "user", {
-        method: "POST",
+export async function login(elm, user, pass, data, link = apiLink){
+    fetch(link + `authPassword?username=${user}&password=${pass}`, {
+        method: "GET",
         headers:{
             "Content-Type" : "application/json"
-        },
-        body: JSON.stringify(data)
+        }
     })
     .catch((err) => console.log(err))
-    .then(response => response.text())
+    .then(response => response.json())
     .then(id => {
+        if(id == "Incorrect Password"){
+            elm.innerHTML = "Incorrect Password";
+            console.log("Incorrect Password");  
+            return;
+        }
+
         window.location.href = `/index.html?id=${id}`;
     });
 }

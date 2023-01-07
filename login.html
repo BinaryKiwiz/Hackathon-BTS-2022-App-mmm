@@ -28,37 +28,26 @@
             <h2 class="conainter__header">
                 Login
             </h2>
-            <form action="" class="form">
+            <form action="" class="form" onsubmit = "return false">
                 <div class="form__group">
 
                     <!-- username -->
-                    <label for="email" class = "form__label">
-                        Email
+                    <label for="user" class = "form__label">
+                        Username
                     </label>
                     <div class="create-check">
-                    <input type="text" class="form__input" id="email"placeholder = "Enter Email" autocomplete = "off">
+                    <input type="text" class="form__input" id="user"placeholder = "Enter Username" autocomplete = "off">
               
                     </div>
                     <p class="form__message" id="email__message"></p>
                    
 
                     <!-- password -->
-                    <label for="Username" class = "form__label">
+                    <label for="pass" class = "form__label">
                         Password
                     </label>
                     <div class="create-check">
-                    <input type="text" class="form__input" id="password"placeholder = "Enter username" autocomplete = "off">
-                    <i class="gg-check form__green" ></i>
-                    </div>
-                    <p class="form__message" id="password__message"></p>
-                   
-
-                    <!-- confirmation -->
-                    <label for="confirmation" class = "form__label">
-                        Password
-                    </label>
-                    <div class="create-check">
-                    <input type="text" class="form__input" id="confirmation" placeholder = "Enter password" autocomplete = "off">
+                    <input type="text" class="form__input" id="pass" placeholder = "Enter password" autocomplete = "off">
                     <i class="gg-check form__green" ></i>
                     </div>
                     <p class="form__message" id="confirmation__message"></p>
@@ -66,9 +55,9 @@
 
                     <!-- <button class="form__button" id = "sumbit">Next</button> -->
 
-                    <a href="account--name.html" id = "submit" class = "form__button">Login</a>
+                    <button id = "submit" class = "form__button">Login</button>
 
-                    <p>Already have an account? <a class = "login--link" href="login.html">Login</a></p>
+                    <p>Don't have an account? <a class = "login--link" href="accounts.html">Sign Up</a></p>
                     
                 </div>
             </form>
@@ -79,6 +68,6 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="" async defer></script>
+        <script src="src/login.js" type = "module" async defer></script>
     </body>
 </html>
