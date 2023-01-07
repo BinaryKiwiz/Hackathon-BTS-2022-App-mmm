@@ -32,7 +32,7 @@ export async function login(elm, user, pass, data, link = apiLink){
             return;
         }
 
-        window.location.href = `HackathonFrontend/index.html?id=${id}`;
+        window.location.href = `index.html?id=${id}`;
     });
 }
 
@@ -308,6 +308,6 @@ export async function createAccount(data, link = apiLink){
     .catch((err) => console.log(err))
     .then(response => response.text())
     .then(id => {
-        window.location.href = `HackathonFrontend/index.html?id=${id}`;
+        window.location.href = `index.html?id=${id}`;
     });
 }
