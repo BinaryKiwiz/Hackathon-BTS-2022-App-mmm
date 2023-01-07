@@ -31,7 +31,7 @@ const sendProject = () => {
         "host" : id,
         "date" : new Date(),
         "old" : false,
-        "participants" : []
+        "participants" : [id]
     }
 
     createProject(trailid, id, body)

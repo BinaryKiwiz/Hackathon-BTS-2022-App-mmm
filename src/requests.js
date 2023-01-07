@@ -136,15 +136,17 @@ export async function createProject(trailid, userid, data, link = apiLink){
 }
 
 const joinProject = (id, projectid, link = apiLink) => {
+    const data = {
+        "_id" : projectid,
+        "participants" : [id]
+    }
+
     fetch(`${link}addProjectParticipants`, {
         method: "PATCH",
         headers: {
             "Content-Type" : "application/json"
         },
-        body: JSON.stringify({
-            "_id" : projectid.toString(),
-            "participants" : [id.toString()]
-        })
+        body: JSON.stringify(data)
     })
     .catch((err) => console.log(err));
 }
@@ -181,7 +183,7 @@ export async function getTrailProjects(userid, trailid, link = apiLink){
                 const joinButton = document.createElement("button");
                 joinButton.classList.add("button--basic");
                 joinButton.appendChild(document.createTextNode("Join Project"));
-                joinButton.onclick = () => {joinProject(userid, trailid);}
+                joinButton.onclick = () => {joinProject(userid, dict["_id"]);}
                 div.appendChild(joinButton);
 
                 projectDiv.appendChild(div);
