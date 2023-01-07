@@ -13,12 +13,33 @@ body {
 h1 {
     font-family: 'Fredoka', sans-serif;
     color: rgb(28, 28, 28);
+    font-size: 3rem;
     text-align: center;
   }
-
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+  .column {
+    text-align: center;
+    justify-content: center;
+    width: 45%;
+    padding: 1rem;
+  }
+.image {
+  margin-top: 6%;
+  margin: 2%;
+  height: 35rem;
+  width: 35rem;
+}
 .rectangle {
     width: 100px;
     height: 100px;
     background-color: rgb(36, 58, 36);
     margin: 1.5in;
+}
+
+ul{
+  list-style-position: inside
 }
