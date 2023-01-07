@@ -33,11 +33,15 @@ const createUser = () => {
         "username" : userName,
         "password" : pass,
         "email" : email,
-        "firstName" : firstName;
-        "lastName" : lastName;
+        "firstName" : firstName,
+        "lastName" : lastName
     }
 
-    return;
+    document.getElementById("user").innerHTML = "";
+    document.getElementById("firstname").innerHTML = "";
+    document.getElementById("lastname").innerHTML = "";
+    
+    postReq(body, "user");
 }
 
 function showWrong(place, innerText){
